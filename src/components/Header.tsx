@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Scale, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import logo from "../assets/WhatsApp_Image_2026-01-14_at_5.01.35_PM-removebg-preview.png"
 // import { motion, AnimatePresence } from 'motion/react';
