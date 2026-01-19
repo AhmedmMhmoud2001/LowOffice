@@ -4,14 +4,14 @@ import {
     ArrowUp,
     MessageCircle,
     Plus,
-    X,
+
     Facebook,
     Twitter,
     Linkedin,
     Instagram,
     Youtube,
     Mail,
-    Share2
+
 } from 'lucide-react';
 
 export function FloatingActions() {
