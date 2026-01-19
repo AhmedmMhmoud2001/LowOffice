@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Scale, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import logo from "../assets/WhatsApp_Image_2026-01-14_at_5.01.35_PM-removebg-preview.png"
 export function Footer() {
   return (

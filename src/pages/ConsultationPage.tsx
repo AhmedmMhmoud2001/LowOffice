@@ -4,7 +4,7 @@ import { PricingCard } from '../components/PricingCard';
 import { Phone, MessageCircle, Send } from 'lucide-react';
 
 export function ConsultationPage() {
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -70,7 +70,6 @@ export function ConsultationPage() {
                   'عبر الهاتف أو البريد',
                 ]}
                 onSelect={() => {
-                  setSelectedPlan('free');
                   setFormData({ ...formData, consultationType: 'free' });
                 }}
               />
@@ -94,7 +93,6 @@ export function ConsultationPage() {
                 ]}
                 highlighted
                 onSelect={() => {
-                  setSelectedPlan('paid');
                   setFormData({ ...formData, consultationType: 'paid' });
                 }}
               />
