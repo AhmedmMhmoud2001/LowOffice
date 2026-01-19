@@ -1,11 +1,25 @@
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from "../assets/WhatsApp_Image_2026-01-14_at_5.01.35_PM-removebg-preview.png"
 // import { motion, AnimatePresence } from 'motion/react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { label: 'الرئيسية', path: '/' },
@@ -17,15 +31,16 @@ export function Header() {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-[var(--navy-blue)] shadow-lg" dir="rtl">
+    <header
+      className={`w-full fixed top-0 z-50 bg-[var(--navy-blue)] shadow-lg transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      dir="rtl"
+    >
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-0 sm:px-6 lg:px-8">
         <div className="flex items-center justify-around h-20 2xl:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-1">
             <img alt="AMR SAIED KOTB Logo" className="w-20 h-20 object-contain" src={logo} />
-            {/* <div className="w-10 h-10 2xl:w-12 2xl:h-12 bg-[var(--gold)] rounded-lg flex items-center justify-center">
-              <Scale className="w-6 h-6 2xl:w-7 2xl:h-7 text-[var(--navy-blue)]" />
-            </div> */}
             <span className=" hidden sm:flex text-xl xl:text-2xl font-bold text-white">عمرو قطب للمحاماة</span>
           </Link>
 
@@ -58,8 +73,6 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {/* <AnimatePresence> */}
-
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-[100] lg:hidden">
             {/* Backdrop */}
@@ -102,7 +115,6 @@ export function Header() {
             </div>
           </div>
         )}
-        {/* </AnimatePresence> */}
       </div>
     </header>
   );

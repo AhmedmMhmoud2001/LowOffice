@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
+import heroBg from '../assets/hero-bg.png';
 
 export function ContactPage() {
     const [formData, setFormData] = useState({
@@ -45,15 +46,20 @@ export function ContactPage() {
     return (
         <div className="min-h-screen" dir="rtl">
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-[var(--navy-blue)] to-[var(--charcoal-black)] text-white py-20 2xl:py-32">
-                <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="relative bg-[var(--navy-blue)] text-white py-20 2xl:py-32 min-h-[700px] flex items-center overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/85 to-[var(--charcoal-black)]/90"></div>
+                </div>
+                <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         className="text-center max-w-3xl 2xl:max-w-4xl mx-auto"
                     >
-                        <h1 className="text-5xl md:text-6xl 2xl:text-7xl mb-6 font-bold">تواصل معنا</h1>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-6 font-bold">تواصل معنا</h1>
                         <p className="text-xl 2xl:text-2xl text-gray-300">
                             نحن هنا لمساعدتك. تواصل معنا للحصول على استشارة قانونية أو لأي استفسار.
                         </p>
@@ -73,7 +79,7 @@ export function ContactPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl 2xl:text-4xl font-bold text-[var(--navy-blue)] mb-8">معلومات التواصل</h2>
+                            <h2 className="text-2xl sm:text-3xl 2xl:text-4xl font-bold text-[var(--navy-blue)] mb-8">معلومات التواصل</h2>
                             <div className="grid gap-8">
                                 {contactInfo.map((info, index) => (
                                     <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
@@ -99,7 +105,7 @@ export function ContactPage() {
                             transition={{ duration: 0.6 }}
                             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
                         >
-                            <h2 className="text-3xl 2xl:text-4xl font-bold text-[var(--navy-blue)] mb-8">أرسل لنا رسالة</h2>
+                            <h2 className="text-2xl sm:text-3xl 2xl:text-4xl font-bold text-[var(--navy-blue)] mb-8">أرسل لنا رسالة</h2>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>

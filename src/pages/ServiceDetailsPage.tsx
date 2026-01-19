@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, Phone, MessageCircle, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import heroBg from '../assets/hero-bg.png';
 
 export function ServiceDetailsPage() {
   const [formData, setFormData] = useState({
@@ -27,8 +28,13 @@ export function ServiceDetailsPage() {
   return (
     <div className="min-h-screen" dir="rtl">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--navy-blue)] to-[var(--charcoal-black)] text-white py-20 2xl:py-32">
-        <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[var(--navy-blue)] text-white py-20 2xl:py-32 min-h-[700px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/85 to-[var(--charcoal-black)]/90"></div>
+        </div>
+        <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,7 +45,7 @@ export function ServiceDetailsPage() {
               <ArrowRight className="w-5 h-5 2xl:w-6 2xl:h-6" />
               <span>العودة إلى الخدمات</span>
             </a>
-            <h1 className="text-5xl md:text-6xl 2xl:text-7xl mb-6 font-bold">القضايا المدنية</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-6 font-bold">القضايا المدنية</h1>
             <p className="text-xl 2xl:text-2xl text-gray-300">
               نقدم تمثيلاً قانونياً شاملاً في القضايا المدنية بما في ذلك النزاعات العقارية والتجارية
             </p>
@@ -50,7 +56,7 @@ export function ServiceDetailsPage() {
       {/* Detailed Description */}
       <section className="py-16 2xl:py-24 bg-white">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl 2xl:text-5xl mb-8 text-[var(--navy-blue)] font-bold">تفاصيل الخدمة</h2>
+          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl mb-8 text-[var(--navy-blue)] font-bold">تفاصيل الخدمة</h2>
           <div className="prose prose-lg 2xl:prose-xl max-w-none text-gray-700 text-right">
             <p className="text-lg 2xl:text-xl leading-relaxed mb-6">
               نحن نتخصص في تقديم خدمات قانونية شاملة في القضايا المدنية. فريقنا من المحامين المتخصصين لديهم خبرة واسعة في التعامل مع مختلف أنواع النزاعات المدنية.
@@ -88,7 +94,7 @@ export function ServiceDetailsPage() {
       {/* Process Steps */}
       <section className="py-16 2xl:py-24 bg-[var(--off-white)]">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl 2xl:text-5xl mb-12 text-center text-[var(--navy-blue)] font-bold">خطوات العمل</h2>
+          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl mb-12 text-center text-[var(--navy-blue)] font-bold">خطوات العمل</h2>
           <div className="space-y-6 2xl:space-y-8">
             {processSteps.map((step, index) => (
               <motion.div
@@ -115,7 +121,7 @@ export function ServiceDetailsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 2xl:gap-20">
             {/* Form */}
             <div>
-              <h2 className="text-3xl 2xl:text-4xl mb-8 text-[var(--navy-blue)] font-bold">طلب الخدمة</h2>
+              <h2 className="text-2xl sm:text-3xl 2xl:text-4xl mb-8 text-[var(--navy-blue)] font-bold">طلب الخدمة</h2>
               <form onSubmit={handleSubmit} className="space-y-5 2xl:space-y-6">
                 <div>
                   <label className="block mb-2 text-[var(--navy-blue)] 2xl:text-lg font-medium">الاسم الكامل</label>
@@ -176,7 +182,7 @@ export function ServiceDetailsPage() {
 
             {/* Contact Options */}
             <div>
-              <h2 className="text-3xl 2xl:text-4xl mb-8 text-[var(--navy-blue)] font-bold">تواصل معنا مباشرة</h2>
+              <h2 className="text-2xl sm:text-3xl 2xl:text-4xl mb-8 text-[var(--navy-blue)] font-bold">تواصل معنا مباشرة</h2>
               <div className="space-y-6 2xl:space-y-8">
                 <div className="bg-[var(--off-white)] p-8 2xl:p-10 rounded-2xl shadow-lg">
                   <h3 className="text-xl 2xl:text-2xl mb-4 text-[var(--navy-blue)] font-semibold">للاستفسارات العاجلة</h3>

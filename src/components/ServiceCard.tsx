@@ -13,7 +13,7 @@ export function ServiceCard({ icon: Icon, title, description, link }: ServiceCar
   const content = (
     <motion.div
       whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(212, 165, 116, 0.2)' }}
-      className="bg-white p-8 2xl:p-10 rounded-2xl shadow-lg h-full transition-all duration-300 cursor-pointer flex flex-col"
+      className=" p-8 2xl:p-10 rounded-2xl shadow-lg h-full transition-all duration-300 cursor-pointer flex flex-col"
       dir="rtl"
     >
       <div className="w-16 h-16 2xl:w-20 2xl:h-20 bg-gradient-to-br from-[var(--gold)] to-[var(--gold-light)] rounded-xl flex items-center justify-center mb-6">

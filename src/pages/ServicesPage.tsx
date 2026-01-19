@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Scale, Building, FileText, Users, Home, Banknote, Gavel, ShieldCheck, Briefcase } from 'lucide-react';
 import { ServiceCard } from '../components/ServiceCard';
+import heroBg from '../assets/hero-bg.png';
 
 export function ServicesPage() {
   const services = [
@@ -54,15 +55,20 @@ export function ServicesPage() {
   return (
     <div className="min-h-screen" dir="rtl">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--navy-blue)] to-[var(--charcoal-black)] text-white py-20 2xl:py-32">
-        <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[var(--navy-blue)] text-white py-20 2xl:py-32 min-h-[700px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/85 to-[var(--charcoal-black)]/90"></div>
+        </div>
+        <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl 2xl:max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl 2xl:text-7xl mb-6 font-bold">الخدمات القانونية</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-6 font-bold">الخدمات القانونية</h1>
             <p className="text-xl 2xl:text-2xl text-gray-300">
               نقدم مجموعة شاملة من الخدمات القانونية المتخصصة لتلبية احتياجاتك
             </p>
@@ -93,7 +99,7 @@ export function ServicesPage() {
       {/* CTA Section */}
       <section className="py-20 2xl:py-32 bg-white">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl 2xl:text-5xl mb-6 text-[var(--navy-blue)] font-bold">هل تحتاج إلى خدمة قانونية؟</h2>
+          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl mb-6 text-[var(--navy-blue)] font-bold">هل تحتاج إلى خدمة قانونية؟</h2>
           <p className="text-xl 2xl:text-2xl text-gray-600 mb-8">
             فريقنا من المحامين المتخصصين جاهز لمساعدتك في جميع احتياجاتك القانونية
           </p>

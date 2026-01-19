@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { Target, Eye, Award, Shield, Users, Globe, CheckCircle } from 'lucide-react';
 
+import heroBg from '../assets/hero-bg.png';
+
 export function AboutPage() {
     const values = [
         {
@@ -28,11 +30,11 @@ export function AboutPage() {
     return (
         <div className="min-h-screen" dir="rtl">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-[var(--navy-blue)] via-[var(--charcoal-black)] to-[var(--navy-blue)] text-white py-20 2xl:py-32 overflow-hidden">
-                {/* Abstract Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-20 right-20 w-96 h-96 bg-[var(--gold)] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-20 left-20 w-96 h-96 bg-[var(--gold)] rounded-full blur-3xl"></div>
+            <section className="relative bg-[var(--navy-blue)] text-white py-20 2xl:py-32 min-h-[700px] flex items-center overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/85 to-[var(--charcoal-black)]/90"></div>
                 </div>
 
                 <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -42,7 +44,7 @@ export function AboutPage() {
                         transition={{ duration: 0.8 }}
                         className="text-center max-w-4xl 2xl:max-w-5xl mx-auto"
                     >
-                        <h1 className="text-4xl md:text-6xl 2xl:text-7xl mb-6 text-white leading-tight font-bold">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-6 text-white leading-tight font-bold">
                             من نحن
                         </h1>
                         <p className="text-xl md:text-2xl 2xl:text-3xl mb-10 text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -64,7 +66,7 @@ export function AboutPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl 2xl:text-4xl font-bold text-[var(--navy-blue)] mb-6">نبذة عن المكتب</h2>
+                            <h2 className="text-2xl sm:text-3xl 2xl:text-4xl font-bold text-[var(--navy-blue)] mb-6">نبذة عن المكتب</h2>
                             <p className="text-lg 2xl:text-xl text-gray-600 mb-6 leading-relaxed">
                                 مكتب عمرو قطب للمحاماة والاستشارات القانونية هو أحد المكاتب الرائدة في مجال المحاماة، حيث يضم نخبة من المحامين والمستشارين القانونيين ذوي الخبرة والكفاءة العالية.
                             </p>
@@ -148,7 +150,7 @@ export function AboutPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl md:text-5xl 2xl:text-6xl mb-4 text-[var(--navy-blue)] font-bold">قيمنا ومبادئنا</h2>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl mb-4 text-[var(--navy-blue)] font-bold">قيمنا ومبادئنا</h2>
                         <p className="text-xl 2xl:text-2xl text-gray-600 max-w-3xl mx-auto">
                             نستند في عملنا إلى مجموعة من القيم الراسخة التي تحكم أداءنا وتعاملاتنا
                         </p>

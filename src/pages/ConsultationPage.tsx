@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { PricingCard } from '../components/PricingCard';
 import { Phone, MessageCircle, Send } from 'lucide-react';
+import heroBg from '../assets/hero-bg.png';
 
 export function ConsultationPage() {
 
@@ -23,15 +24,20 @@ export function ConsultationPage() {
   return (
     <div className="min-h-screen" dir="rtl">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--navy-blue)] to-[var(--charcoal-black)] text-white py-20 2xl:py-32">
-        <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[var(--navy-blue)] text-white py-20 2xl:py-32 min-h-[700px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/85 to-[var(--charcoal-black)]/90"></div>
+        </div>
+        <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl 2xl:max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl 2xl:text-7xl mb-6 font-bold">الاستشارات القانونية أونلاين</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mb-6 font-bold">الاستشارات القانونية أونلاين</h1>
             <p className="text-xl 2xl:text-2xl text-gray-300">
               احصل على استشارة قانونية احترافية من محامين متخصصين في دقائق معدودة
             </p>
@@ -42,7 +48,7 @@ export function ConsultationPage() {
       {/* Service Explanation */}
       <section className="py-16 2xl:py-24 bg-white">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl 2xl:text-5xl mb-6 text-[var(--navy-blue)] font-bold">كيف تعمل الخدمة؟</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl mb-6 text-[var(--navy-blue)] font-bold">كيف تعمل الخدمة؟</h2>
           <p className="text-lg 2xl:text-xl text-gray-600 leading-relaxed">
             نقدم استشارات قانونية فورية عبر الإنترنت تشمل جميع المجالات القانونية. يمكنك الاختيار بين استشارة مجانية أولية أو استشارة مدفوعة مفصلة مع خطة عمل كاملة.
           </p>
@@ -52,7 +58,7 @@ export function ConsultationPage() {
       {/* Pricing Cards */}
       <section className="py-16 2xl:py-32 bg-[var(--off-white)]">
         <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl 2xl:text-5xl text-center mb-12 text-[var(--navy-blue)] font-bold">اختر الخطة المناسبة</h2>
+          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl text-center mb-12 text-[var(--navy-blue)] font-bold">اختر الخطة المناسبة</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 2xl:gap-16 max-w-5xl 2xl:max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -109,7 +115,7 @@ export function ConsultationPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl 2xl:text-5xl text-center mb-12 text-[var(--navy-blue)] font-bold">احجز استشارتك الآن</h2>
+            <h2 className="text-3xl sm:text-4xl 2xl:text-5xl text-center mb-12 text-[var(--navy-blue)] font-bold">احجز استشارتك الآن</h2>
             <form onSubmit={handleSubmit} className="space-y-6 2xl:space-y-8">
               <div>
                 <label className="block mb-2 text-[var(--navy-blue)] 2xl:text-lg font-medium">الاسم الكامل</label>
