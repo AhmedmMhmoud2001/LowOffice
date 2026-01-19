@@ -55,7 +55,7 @@ export function AboutPage() {
             {/* About Content */}
             <section className="py-20 2xl:py-32 bg-white">
                 <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 2xl:gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 2xl:gap-16 items-center">
 
                         {/* Text Content */}
                         <motion.div
@@ -72,7 +72,7 @@ export function AboutPage() {
                                 نحن نفخر بتقديم حلول قانونية مبتكرة وفعالة لعملائنا، سواء كانوا أفرادًا أو شركات، في مختلف المجالات القانونية. نسعى جاهدين لبناء علاقات طويلة الأمد مع عملائنا مبنية على الثقة والاحترام المتبادل.
                             </p>
 
-                            <div className="flex flex-col gap-4 mt-8">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8">
                                 <div className="flex items-start gap-4">
                                     <div className="bg-[var(--gold)]/10 p-2 rounded-lg mt-1">
                                         <CheckCircle className="w-5 h-5 text-[var(--navy-blue)]" />
@@ -96,7 +96,7 @@ export function AboutPage() {
                         </motion.div>
 
                         {/* Vision & Mission Cards */}
-                        <div className="grid gap-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
