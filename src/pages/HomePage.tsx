@@ -4,6 +4,7 @@ import { ServiceCard } from '../components/ServiceCard';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import video from '../assets/7841702-hd_1920_1080_30fps.mp4';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -38,11 +39,21 @@ export function HomePage() {
   return (
     <div className="min-h-screen" dir="rtl">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--navy-blue)] via-[var(--charcoal-black)] to-[var(--navy-blue)] text-white py-20 md:py-32 xl:py-40 overflow-hidden">
-        {/* Abstract Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-[var(--gold)] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-[var(--gold)] rounded-full blur-3xl"></div>
+      {/* Hero Section */}
+      <section className="relative bg-[var(--navy-blue)] text-white py-20 md:py-32 xl:py-40 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+          {/* Dynamic Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/80 to-[var(--charcoal-black)]/90"></div>
         </div>
 
         <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
