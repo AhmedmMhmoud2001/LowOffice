@@ -28,7 +28,7 @@ export function ConsultationPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/95 via-[var(--navy-blue)]/85 to-[var(--charcoal-black)]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy-blue)]/50 via-[var(--navy-blue)]/20 to-[var(--charcoal-black)]/40"></div>
         </div>
         <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div

@@ -55,7 +55,7 @@ export function Footer() {
             <ul className="space-y-3 2xl:space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 2xl:w-6 2xl:h-6 text-[var(--gold)] mt-0.5" />
-                <span className="text-gray-300 2xl:text-lg">+966 50 123 4567</span>
+                <span className="text-gray-300 2xl:text-lg" dir="ltr">+20 11 11117677</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 2xl:w-6 2xl:h-6 text-[var(--gold)] mt-0.5" />
@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6 text-[var(--gold)] mt-0.5" />
-                <span className="text-gray-300 2xl:text-lg">الرياض، المملكة العربية السعودية</span>
+                <span className="text-gray-300 2xl:text-lg">القاهرة مصر</span>
               </li>
             </ul>
           </div>
@@ -89,7 +89,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 2xl:mt-12 2xl:pt-10 text-center text-gray-400">
-          <p className="2xl:text-lg">&copy; 2026 المكتب القانوني. جميع الحقوق محفوظة.</p>
+          <p className="2xl:text-lg flex flex-col md:flex-row justify-center items-center gap-2">
+            <span>All Rights Reserved &copy; Designed by <a href="https://www.qeematech.net/" rel="dofollow" className="text-[var(--gold)] hover:underline">Qeematech</a></span>
+          </p>
         </div>
       </div>
     </footer>
