@@ -1,25 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import logo from "../assets/WhatsApp_Image_2026-01-14_at_5.01.35_PM-removebg-preview.png"
 // import { motion, AnimatePresence } from 'motion/react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = true;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { label: 'الرئيسية', path: '/' },
@@ -73,8 +62,8 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="fixed inset-0 z-[100] lg:hidden">
+        {mobileMenuOpen && createPortal(
+          <div className="fixed inset-0 z-[999] lg:hidden" dir="rtl">
             {/* Backdrop */}
             <div
               className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -113,7 +102,8 @@ export function Header() {
                 </Link>
               </div>
             </div>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
     </header>
